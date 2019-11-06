@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateu\\source\\repos\\PJP project\\Album Manager\\Album Manager.csproj": {}
+    "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\Album Manager\\Album Manager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateu\\source\\repos\\PJP project\\Album Manager\\Album Manager.csproj": {
+    "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\Album Manager\\Album Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\source\\repos\\PJP project\\Album Manager\\Album Manager.csproj",
+        "projectUniqueName": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\Album Manager\\Album Manager.csproj",
         "projectName": "Album Manager",
-        "projectPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\Album Manager\\Album Manager.csproj",
+        "projectPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\Album Manager\\Album Manager.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\Album Manager\\obj\\",
+        "outputPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\Album Manager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
