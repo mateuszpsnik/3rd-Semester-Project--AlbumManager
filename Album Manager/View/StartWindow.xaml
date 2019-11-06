@@ -1,0 +1,49 @@
+﻿<Window x:Class="Album_Manager.View.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Album_Manager.View"
+        xmlns:viewmodel="clr-namespace:Album_Manager.ViewModel"
+        mc:Ignorable="d"
+        Title="Album Manager" Height="675" Width="1200">
+
+    <Window.Resources>
+        <viewmodel:AlbumViewModel x:Key="albumViewModel"/>
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource ResourceKey=albumViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="Genres" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="genresComboBox" Width="200"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Day/Night" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="dayNightComboBox" Width="200"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Mood" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="moodComboBox" Width="200"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Year" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="From:"/>
+                    <TextBox Width="50"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="To:"/>
+                    <TextBox Width="50"/>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="randomButton" Content="Random album" Click="randomButton_Click"/>
+            <Button x:Name="editButton" Content="Edit the collection" Click="editButton_Click"/>
+        </StackPanel>
+        <local:ListOfAlbumsControl Grid.Row="1"/>
+    </Grid>
+</Window>
