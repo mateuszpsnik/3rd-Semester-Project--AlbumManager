@@ -33,15 +33,18 @@ namespace Album_Manager.View
                 genresComboBox.Items.Add(genreComboItem);
             }
 
+
             foreach (DayOrNight dayNightComboItem in Enum.GetValues(typeof(DayOrNight)))
             {
                 dayNightComboBox.Items.Add(dayNightComboItem);
             }
 
+
             foreach (Mood moodComboItem in Enum.GetValues(typeof(Mood)))
             {
                 moodComboBox.Items.Add(moodComboItem);
             }
+
         }
 
         private void randomButton_Click(object sender, RoutedEventArgs e)

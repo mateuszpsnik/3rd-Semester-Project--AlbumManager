@@ -21,7 +21,7 @@
     </UserControl.Resources>
 
     <Grid>
-        <ListView ItemsSource="{Binding Collection}" ItemTemplate="{StaticResource AlbumItemTemplate}" 
-                      ScrollViewer.VerticalScrollBarVisibility="Visible" />
+        <ListView x:Name="listView" ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource AlbumItemTemplate}" 
+                      ScrollViewer.VerticalScrollBarVisibility="Visible"/>
     </Grid>
 </UserControl>
