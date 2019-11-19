@@ -41,6 +41,10 @@
                     <TextBox Width="50" Text="{Binding YearTo, Mode=TwoWay}"/>
                 </StackPanel>
             </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Apply filters" HorizontalAlignment="Center"/>
+                <CheckBox x:Name="applyFiltersCheckbox" IsChecked="{Binding ApplyFilters, Mode=TwoWay}"/>
+            </StackPanel>
             <Button x:Name="randomButton" Content="Random album" Click="randomButton_Click"/>
             <Button x:Name="editButton" Content="Edit the collection" Click="editButton_Click"/>
         </StackPanel>

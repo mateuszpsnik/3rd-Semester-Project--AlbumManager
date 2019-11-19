@@ -13,9 +13,10 @@ namespace Album_Manager.Model
         public List<Genre> Genres { get; private set; }
         public DayOrNight DayOrNight { get; private set; }
         public List<Mood> Mood { get; private set; }
+        public Uri AlbumUri { get; private set; }
 
         public Album(string title, string artist, int year, string imageUrl, List<Genre> genres,
-            DayOrNight dayOrNight, List<Mood> mood)
+            DayOrNight dayOrNight, List<Mood> mood, Uri albumUri)
         {
             Title = title;
             Artist = artist;
@@ -24,6 +25,7 @@ namespace Album_Manager.Model
             Genres = genres;
             DayOrNight = dayOrNight;
             Mood = mood;
+            AlbumUri = albumUri;
         }
             
     }

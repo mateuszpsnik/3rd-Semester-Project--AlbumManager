@@ -49,8 +49,14 @@ namespace Album_Manager.View
 
         private void randomButton_Click(object sender, RoutedEventArgs e)
         {
-            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow();
-            randomAlbumWindow.Show();
+            AlbumViewModel albumViewModel = new AlbumViewModel();
+            albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
+            bool success = albumViewModel.ChooseRandomAlbum();
+            if (success)
+            {
+                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow();
+                randomAlbumWindow.Show();
+            }
         }
 
         private void editButton_Click(object sender, RoutedEventArgs e)

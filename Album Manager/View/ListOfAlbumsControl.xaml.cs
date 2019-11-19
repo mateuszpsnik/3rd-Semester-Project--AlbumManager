@@ -22,5 +22,11 @@ namespace Album_Manager.View
         {
             InitializeComponent();
         }
+
+        private void listView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow();
+            randomAlbumWindow.Show();
+        }
     }
 }

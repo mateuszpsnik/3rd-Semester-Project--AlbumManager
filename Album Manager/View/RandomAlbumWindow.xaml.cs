@@ -23,7 +23,7 @@ namespace Album_Manager.View
         {
             InitializeComponent();
 
-            this.Title = viewModel.CurrentAlbum.Title;
+            webBrowser.Navigate(viewModel.CurrentAlbumUri);
         }
 
         private void anotherAlbumButton_Click(object sender, RoutedEventArgs e)
