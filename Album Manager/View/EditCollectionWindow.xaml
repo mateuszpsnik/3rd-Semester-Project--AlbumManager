@@ -12,7 +12,38 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="backHomeButton" Content="Return to the main window" Grid.Row="1" Click="backHomeButton_Click"/>
+        <StackPanel>
+            <TextBlock Text="Album Title"/>
+            <TextBox x:Name="titleBox"/>
+            <TextBlock Text="Artist"/>
+            <TextBox x:Name="artistBox"/>
+            <TextBlock Text="Year"/>
+            <TextBox x:Name="yearBox"/>
+            <TextBlock Text="Link to the album cover"/>
+            <TextBox x:Name="coverBox"/>
+            <TextBlock Text="Spotify link"/>
+            <TextBox x:Name="spotifyBox"/>
+            <TextBlock Text="Day or night"/>
+            <ComboBox x:Name="dayNightComboBox"/>
+            <TextBlock Text="Genres"/>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="genresComboBox"/>
+                <Button x:Name="addGenre" Content="Add" Click="addGenre_Click"/>
+            </StackPanel>
+            <ListView x:Name="genres"/>
+            <TextBlock Text="Mood"/>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="moodComboBox"/>
+                <Button x:Name="addMood" Content="Add" Click="addMood_Click"/>
+            </StackPanel>
+            <ListView x:Name="moods"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="openButton" Content="Open file" Click="openButton_Click"/>
+            <Button x:Name="saveButton" Content="Save file" Click="saveButton_Click"/>
+        </StackPanel>
+        <Button x:Name="backHomeButton" Content="Return to the main window" Grid.Row="2" Click="backHomeButton_Click"/>
     </Grid>
 </Window>

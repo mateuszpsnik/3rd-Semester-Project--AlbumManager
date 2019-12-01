@@ -3,9 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 using Album_Manager.Model;
-using Album_Manager.View;
+using System.Runtime.Serialization;
+using System.IO;
 
 namespace Album_Manager.ViewModel
 {
@@ -178,34 +178,19 @@ namespace Album_Manager.ViewModel
 
         private void addItems()
         {
-            fullCollection.Add(new Album("Alternative, Both, Sad", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Alternative }, DayOrNight.Both, new List<Mood>() { Mood.Sad }, 
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Electronic, Day, Happy&Calm", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Electronic }, DayOrNight.Day, new List<Mood>() { Mood.Happy, Mood.Calm },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Alternative, Both, Aggresive", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Alternative }, DayOrNight.Both, new List<Mood>() { Mood.Aggresive },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Electronic&Alternative, Both, Aggresive", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Electronic, Genre.Alternative }, DayOrNight.Both, new List<Mood>() { Mood.Aggresive },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Alternative, Night, Happy", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Alternative }, DayOrNight.Night, new List<Mood>() { Mood.Happy },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Electronic, Both, Aggresive&Sad", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Electronic }, DayOrNight.Both, new List<Mood>() { Mood.Aggresive, Mood.Sad },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
-            fullCollection.Add(new Album("Alternative, Night, Aggresive", "Artist", 1999,
-                @"https://upload.wikimedia.org/wikipedia/commons/c/c2/HMS_Minerva_%281895%29.jpg",
-                new List<Genre>() { Genre.Alternative }, DayOrNight.Night, new List<Mood>() { Mood.Aggresive },
-                new Uri(@"spotify:album:7aNclGRxTysfh6z0d8671k")));
+            string[] paths = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Album Manager");
+
+            foreach (var path in paths)
+            {
+                Album albumDeserialized;
+
+                var dataSerializer = new DataContractSerializer(typeof(Album));
+
+                using (Stream stream = File.OpenRead(path))
+                    albumDeserialized = dataSerializer.ReadObject(stream) as Album;
+
+                fullCollection.Add(albumDeserialized);
+            }
         }
 
         protected void OnPropertyChanged(string propertyName)
