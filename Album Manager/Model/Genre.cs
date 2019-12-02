@@ -7,6 +7,9 @@ namespace Album_Manager.Model
     enum Genre
     {
         Alternative,
-        Electronic
+        Electronic,
+        Rock,
+        Metal,
+        Instrumental,
     }
 }

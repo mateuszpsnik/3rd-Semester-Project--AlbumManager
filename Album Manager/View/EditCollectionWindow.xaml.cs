@@ -110,6 +110,16 @@ namespace Album_Manager.View
 
             using (Stream stream = File.Create(path))
                 dataSerializer.WriteObject(stream, albumToSerialize);
+
+            titleBox.Text = "";
+            artistBox.Text = "";
+            yearBox.Text = "";
+            coverBox.Text = "";
+            genres.Items.Clear();
+            genresList.Clear();
+            moods.Items.Clear();
+            moodsList.Clear();
+            spotifyBox.Text = "";
         }
     }
 }

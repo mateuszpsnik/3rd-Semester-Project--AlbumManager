@@ -6,10 +6,16 @@ namespace Album_Manager.Model
 {
     enum Mood
     {
-        Happy, 
+        Calm,
         Sad,
         Aggresive,
-        Calm,
-
+        Energetic,
+        Danceable,
+        Romantic,
+        Happy,
+        Driving,
+        Live,
+        Party,
+        Summer,
     }
 }
