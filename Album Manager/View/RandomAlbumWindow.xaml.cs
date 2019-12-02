@@ -29,6 +29,8 @@ namespace Album_Manager.View
             ArtistBlock.Text = viewModel.CurrentAlbumArtist;
             YearBlock.Text = viewModel.CurrentAlbumYear.ToString();
 
+            this.Title = viewModel.CurrentAlbumTitle;
+
             webBrowser.Navigate(viewModel.CurrentAlbumUri);
         }
 
