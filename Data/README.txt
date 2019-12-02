@@ -1,0 +1,2 @@
+Folder 'Album Manager' is a copy of the folder on my PC. It contains xml files with informations about some of my favourite albums.
+You can use it yourself to test the application - paste it in your Documents folder.
