@@ -6,7 +6,6 @@ namespace Album_Manager.Model
 {
     public enum DayOrNight
     {
-        Both,
         Night,
         Day,
     }

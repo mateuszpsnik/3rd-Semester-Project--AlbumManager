@@ -19,14 +19,14 @@ namespace Album_Manager.Model
         [DataMember]
         public List<Genre> Genres { get; private set; }
         [DataMember]
-        public DayOrNight DayOrNight { get; private set; }
+        public List<DayOrNight> DayOrNight { get; private set; }
         [DataMember]
         public List<Mood> Mood { get; private set; }
         [DataMember]
         public Uri AlbumUri { get; private set; }
 
         public Album(string title, string artist, int year, string imageUrl, List<Genre> genres,
-            DayOrNight dayOrNight, List<Mood> mood, Uri albumUri)
+            List<DayOrNight> dayOrNight, List<Mood> mood, Uri albumUri)
         {
             Title = title;
             Artist = artist;

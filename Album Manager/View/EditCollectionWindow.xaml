@@ -26,7 +26,11 @@
             <TextBlock Text="Spotify link"/>
             <TextBox x:Name="spotifyBox"/>
             <TextBlock Text="Day or night"/>
-            <ComboBox x:Name="dayNightComboBox"/>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="dayNightComboBox"/>
+                <Button x:Name="addDayNight" Content="Add" Click="addDayNight_Click"/>
+            </StackPanel>
+            <ListView x:Name="dayNightList"/>
             <TextBlock Text="Genres"/>
             <StackPanel Orientation="Horizontal">
                 <ComboBox x:Name="genresComboBox"/>

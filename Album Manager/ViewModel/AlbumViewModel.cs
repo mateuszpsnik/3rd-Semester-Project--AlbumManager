@@ -118,7 +118,7 @@ namespace Album_Manager.ViewModel
                 {
                     var collectionToReturn = from item in value
                                              where item.Genres.Contains((Genre)selectedGenre)
-                                             where item.DayOrNight == (DayOrNight)selectedDayOrNight
+                                             where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
                                              where item.Mood.Contains((Mood)selectedMood)
                                              where item.Year >= yearFrom
                                              where item.Year <= yearTo
@@ -150,7 +150,7 @@ namespace Album_Manager.ViewModel
                 {
                     var filtered = from item in viewCollection
                                    where item.Genres.Contains((Genre)selectedGenre)
-                                   where item.DayOrNight == (DayOrNight)selectedDayOrNight
+                                   where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
                                    where item.Mood.Contains((Mood)selectedMood)
                                    where item.Year >= yearFrom
                                    where item.Year <= yearTo

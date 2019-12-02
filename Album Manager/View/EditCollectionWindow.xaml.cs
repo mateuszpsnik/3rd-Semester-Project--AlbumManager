@@ -30,6 +30,7 @@ namespace Album_Manager.View
 
         List<Genre> genresList = new List<Genre>();
         List<Mood> moodsList = new List<Mood>();
+        List<DayOrNight> dayOrNight = new List<DayOrNight>();
 
         private void backHomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -57,6 +58,12 @@ namespace Album_Manager.View
                 moodComboBox.Items.Add(moodComboItem);
             }
 
+        }
+
+        private void addDayNight_Click(object sender, RoutedEventArgs e)
+        {
+            dayOrNight.Add((DayOrNight)dayNightComboBox.SelectedItem);
+            dayNightList.Items.Add(dayNightComboBox.SelectedItem);
         }
 
         private void addGenre_Click(object sender, RoutedEventArgs e)
@@ -104,7 +111,7 @@ namespace Album_Manager.View
                 + @"\Album Manager\" + titleBox.Text + @".xml";
 
             Album albumToSerialize = new Album(titleBox.Text, artistBox.Text, int.Parse(yearBox.Text), coverBox.Text, genresList,
-                (DayOrNight)dayNightComboBox.SelectedItem, moodsList, new Uri(spotifyBox.Text));
+                dayOrNight, moodsList, new Uri(spotifyBox.Text));
 
             var dataSerializer = new DataContractSerializer(typeof(Album));
 
@@ -115,6 +122,8 @@ namespace Album_Manager.View
             artistBox.Text = "";
             yearBox.Text = "";
             coverBox.Text = "";
+            dayOrNight.Clear();
+            dayNightList.Items.Clear();
             genres.Items.Clear();
             genresList.Clear();
             moods.Items.Clear();
