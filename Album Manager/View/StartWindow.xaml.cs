@@ -54,7 +54,7 @@ namespace Album_Manager.View
             bool success = albumViewModel.ChooseRandomAlbum();
             if (success)
             {
-                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow();
+                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(albumViewModel);
                 randomAlbumWindow.Show();
             }
         }

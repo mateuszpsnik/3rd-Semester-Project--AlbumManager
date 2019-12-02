@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace Album_Manager.Model
 {
     [DataContract]
-    class Album
+    public class Album
     {
         [DataMember]
         public string Title { get; private set; }

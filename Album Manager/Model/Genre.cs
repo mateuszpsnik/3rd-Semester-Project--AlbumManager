@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Album_Manager.Model
 {
-    enum Genre
+    public enum Genre
     {
         Alternative,
         Electronic,

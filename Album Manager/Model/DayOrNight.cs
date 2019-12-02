@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Album_Manager.Model
 {
-    enum DayOrNight
+    public enum DayOrNight
     {
         Both,
         Night,

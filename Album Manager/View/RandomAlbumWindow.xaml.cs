@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,10 +20,14 @@ namespace Album_Manager.View
     /// </summary>
     public partial class RandomAlbumWindow : Window
     {
-        AlbumViewModel viewModel = new AlbumViewModel();
-        public RandomAlbumWindow()
+        public RandomAlbumWindow(AlbumViewModel viewModel)
         {
             InitializeComponent();
+
+            Cover.Source = new BitmapImage(new Uri(viewModel.CurrentAlbumImageUrl));
+            TitleBlock.Text = viewModel.CurrentAlbumTitle;
+            ArtistBlock.Text = viewModel.CurrentAlbumArtist;
+            YearBlock.Text = viewModel.CurrentAlbumYear.ToString();
 
             webBrowser.Navigate(viewModel.CurrentAlbumUri);
         }

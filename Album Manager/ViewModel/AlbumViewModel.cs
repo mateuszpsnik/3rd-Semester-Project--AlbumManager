@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Album_Manager.ViewModel
 {
-    class AlbumViewModel : INotifyPropertyChanged
+    public class AlbumViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<Album> fullCollection = new ObservableCollection<Album>();
         private ObservableCollection<Album> viewCollection;

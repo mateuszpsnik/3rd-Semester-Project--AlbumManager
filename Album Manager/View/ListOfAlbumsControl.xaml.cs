@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Album_Manager.ViewModel;
+using Album_Manager.Model;
 
 namespace Album_Manager.View
 {
@@ -25,7 +27,10 @@ namespace Album_Manager.View
 
         private void listView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow();
+            AlbumViewModel viewModel = new AlbumViewModel();
+            viewModel.CurrentAlbum = listView.SelectedItem as Album;
+
+            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(viewModel);
             randomAlbumWindow.Show();
         }
     }
