@@ -18,7 +18,7 @@ namespace AlbumManagerMobile.ViewModel
         public AlbumViewModel()
         {
             addItems();
-            applyFilters = true;
+            applyFilters = false;
             viewCollection = fullCollection;
             Collection = fullCollection;
             ChooseRandomAlbum();
@@ -116,8 +116,7 @@ namespace AlbumManagerMobile.ViewModel
             get => viewCollection;
             set
             {
-                /*
-                 if (applyFilters)
+                if (applyFilters)
                 {
                     var collectionToReturn = from item in value
                                              where item.Genres.Contains((Genre)selectedGenre)
@@ -140,48 +139,32 @@ namespace AlbumManagerMobile.ViewModel
                     if (viewCollection.Count != 0)
                         currentAlbum = viewCollection[0];
                 }
-                 */
-                var collectionToReturn = from item in value
-                                         select item;
-
-                viewCollection = new ObservableCollection<Album>(collectionToReturn);
-                if (viewCollection.Count != 0)
-                    currentAlbum = viewCollection[0];
-
-                OnPropertyChanged(nameof(Collection));
             }
         }
 
         public bool ChooseRandomAlbum()
         {
-            /*
-                if (applyFilters)
-                {
-                    var filtered = from item in viewCollection
-                                   where item.Genres.Contains((Genre)selectedGenre)
-                                   where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
-                                   where item.Mood.Contains((Mood)selectedMood)
-                                   where item.Year >= yearFrom
-                                   where item.Year <= yearTo
-                                   select item;
-                    List<Album> filteredCollection = new List<Album>(filtered);
-                    currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
-                    return true;
-                }
-                else
-                {
-                    var filtered = from item in viewCollection
-                                   select item;
-                    List<Album> filteredCollection = new List<Album>(filtered);
-                    currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
-                    return true;
-                }
-             */
-            var filtered = from item in viewCollection
-                           select item;
-            List<Album> filteredCollection = new List<Album>(filtered);
-            currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
-            return true;
+            if (applyFilters)
+            {
+                var filtered = from item in viewCollection
+                               where item.Genres.Contains((Genre)selectedGenre)
+                               where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
+                               where item.Mood.Contains((Mood)selectedMood)
+                               where item.Year >= yearFrom
+                               where item.Year <= yearTo
+                               select item;
+                List<Album> filteredCollection = new List<Album>(filtered);
+                currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
+                return true;
+            }
+            else
+            {
+                var filtered = from item in viewCollection
+                               select item;
+                List<Album> filteredCollection = new List<Album>(filtered);
+                currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
+                return true;
+            }
         }
 
         protected void OnPropertyChanged(string propertyName)

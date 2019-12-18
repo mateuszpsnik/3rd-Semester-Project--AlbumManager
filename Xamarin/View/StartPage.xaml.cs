@@ -17,7 +17,7 @@ namespace AlbumManagerMobile.View
             InitializeComponent();
 
         }
-        private void StartButton_Clicked(object sender, EventArgs e)
+        private async void StartButton_Clicked(object sender, EventArgs e)
         {
             AlbumViewModel albumViewModel = new AlbumViewModel();
             //albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
@@ -25,8 +25,14 @@ namespace AlbumManagerMobile.View
             if (success)
             {
                 AlbumPage albumPage = new AlbumPage(albumViewModel);
-                Navigation.PushModalAsync(albumPage);
+                await Navigation.PushModalAsync(albumPage);
             }
+        }
+
+        private async void FiltersButton_Clicked(object sender, EventArgs e)
+        {
+            FiltersPage filtersPage = new FiltersPage();
+            await Navigation.PushModalAsync(filtersPage);
         }
     }
 }

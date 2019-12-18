@@ -35,7 +35,7 @@ namespace AlbumManagerMobile.View
             Device.OpenUri(viewModel.CurrentAlbumUri);
         }
 
-        private void NewRandomButton_Clicked(object sender, EventArgs e)
+        private async void NewRandomButton_Clicked(object sender, EventArgs e)
         {
             AlbumViewModel albumViewModel = new AlbumViewModel();
             //albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
@@ -43,7 +43,7 @@ namespace AlbumManagerMobile.View
             if (success)
             {
                 AlbumPage albumPage = new AlbumPage(albumViewModel);
-                Navigation.PushModalAsync(albumPage);
+                await Navigation.PushModalAsync(albumPage);
             }
         }
     }

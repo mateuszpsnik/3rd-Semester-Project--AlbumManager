@@ -8,6 +8,9 @@
              x:Class="AlbumManagerMobile.View.StartPage">
 
     <ContentPage.Content>
-        <Button Text="Start" x:Name="StartButton" Clicked="StartButton_Clicked"/>
+        <StackLayout>
+            <Button Text="Start without filters" x:Name="StartButton" Clicked="StartButton_Clicked"/>
+            <Button Text="Filters" x:Name="FiltersButton" Clicked="FiltersButton_Clicked"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

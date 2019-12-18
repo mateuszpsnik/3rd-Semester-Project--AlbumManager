@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AlbumManagerMobile.View.FiltersPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Label Text="Choose a genre" HorizontalOptions="CenterAndExpand"/>
+            <Picker x:Name="genresPicker" Title="Genre"/>
+            <Label Text="Are you listening during a day or a night?" HorizontalOptions="CenterAndExpand"/>
+            <Picker x:Name="dayNightPicker" Title="Day or night"/>
+            <Label Text="Choose a mood/valence" HorizontalOptions="CenterAndExpand"/>
+            <Picker x:Name="moodPicker" Title="Mood"/>
+            <Button Text="Select a random album" x:Name="startButton" Clicked="startButton_Clicked"/>
+            <Button Text="Go back home" x:Name="backHomeButton" Clicked="backHomeButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
