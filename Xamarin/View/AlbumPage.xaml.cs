@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using AlbumManagerMobile.ViewModel;
@@ -19,7 +21,10 @@ namespace AlbumManagerMobile.View
 
             this.viewModel = viewModel;
 
-            Cover.Source = new UriImageSource() { Uri = new Uri(viewModel.CurrentAlbumImageUrl) };
+            WebClient Client = new WebClient();
+            var byteArray = Client.DownloadData(viewModel.CurrentAlbumImageUrl.ToString());
+            Cover.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+
             TitleBlock.Text = viewModel.CurrentAlbumTitle;
             ArtistBlock.Text = viewModel.CurrentAlbumArtist;
             YearBlock.Text = viewModel.CurrentAlbumYear.ToString();
