@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AlbumManagerMobile.View.AlbumPage"
+             xmlns:viewmodel="clr-namespace:AlbumManagerMobile.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <viewmodel:AlbumViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <viewmodel:ImageSourceConverter x:Key="imageSourceConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="Cover" WidthRequest="250" HeightRequest="250" Margin="50"/>
+            <StackLayout Margin="20, 20">
+                <Label x:Name="TitleBlock" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label x:Name="ArtistBlock" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label x:Name="YearBlock" FontSize="20" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <Button Text="Open on Spotify" x:Name="SpotifyButton" Clicked="SpotifyButton_Clicked"/>
+            <Button Text="New random album" x:Name="NewRandomButton" Clicked="NewRandomButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

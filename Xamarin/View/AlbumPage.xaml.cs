@@ -3,21 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlbumManagerMobile.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using AlbumManagerMobile.ViewModel;
 
 namespace AlbumManagerMobile.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartPage : ContentPage
+    public partial class AlbumPage : ContentPage
     {
-        public StartPage()
+        AlbumViewModel viewModel;
+        public AlbumPage(AlbumViewModel viewModel)
         {
             InitializeComponent();
 
+            this.viewModel = viewModel;
+
+            Cover.Source = new UriImageSource() { Uri = new Uri(viewModel.CurrentAlbumImageUrl) };
+            TitleBlock.Text = viewModel.CurrentAlbumTitle;
+            ArtistBlock.Text = viewModel.CurrentAlbumArtist;
+            YearBlock.Text = viewModel.CurrentAlbumYear.ToString();
         }
-        private void StartButton_Clicked(object sender, EventArgs e)
+
+        private void SpotifyButton_Clicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(viewModel.CurrentAlbumUri);
+        }
+
+        private void NewRandomButton_Clicked(object sender, EventArgs e)
         {
             AlbumViewModel albumViewModel = new AlbumViewModel();
             //albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
