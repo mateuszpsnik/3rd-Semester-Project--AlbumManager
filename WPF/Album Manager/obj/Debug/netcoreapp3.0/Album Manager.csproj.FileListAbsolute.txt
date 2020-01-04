@@ -46,3 +46,27 @@ C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager
 C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.AssemblyInfo.cs
 C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.dll
 C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.pdb
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.dll
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.pdb
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.exe
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.deps.json
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.runtimeconfig.json
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.runtimeconfig.dev.json
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.dll
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\bin\Debug\netcoreapp3.0\Album Manager.pdb
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.csprojAssemblyReference.cache
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\EditCollectionWindow.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\ListOfAlbumsControl.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\RandomAlbumWindow.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\StartWindow.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\App.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\GeneratedInternalTypeHelper.g.cs
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager_MarkupCompile.cache
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager_MarkupCompile.lref
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\EditCollectionWindow.baml
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\ListOfAlbumsControl.baml
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\RandomAlbumWindow.baml
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\View\StartWindow.baml
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.g.resources
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.AssemblyInfoInputs.cache
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\Album Manager.AssemblyInfo.cs

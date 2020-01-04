@@ -11,43 +11,53 @@
     <Window.Resources>
         <viewmodel:AlbumViewModel x:Key="albumViewModel"/>
     </Window.Resources>
-    
+
     <Grid DataContext="{StaticResource ResourceKey=albumViewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
                 <TextBlock Text="Genres" HorizontalAlignment="Center"/>
                 <ComboBox x:Name="genresComboBox" Width="200" SelectedIndex="{Binding SelectedGenre, Mode=TwoWay}"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="1">
                 <TextBlock Text="Day/Night" HorizontalAlignment="Center"/>
                 <ComboBox x:Name="dayNightComboBox" Width="200" SelectedIndex="{Binding SelectedDayOrNight, Mode=TwoWay}"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="2">
                 <TextBlock Text="Mood" HorizontalAlignment="Center"/>
                 <ComboBox x:Name="moodComboBox" Width="200" SelectedIndex="{Binding SelectedMood, Mode=TwoWay}"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="3">
                 <TextBlock Text="Year" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="From:"/>
-                    <TextBox Width="50" Text="{Binding YearFrom, Mode=TwoWay}"/>
+                    <TextBlock Margin="2" Text="From:"/>
+                    <TextBox Width="50" Margin="2" Text="{Binding YearFrom, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="To:"/>
-                    <TextBox Width="50" Text="{Binding YearTo, Mode=TwoWay}"/>
+                    <TextBlock Margin="2" Text="To:"/>
+                    <TextBox Width="50" Margin="2" Text="{Binding YearTo, Mode=TwoWay}"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="4">
                 <TextBlock Text="Apply filters" HorizontalAlignment="Center"/>
-                <CheckBox x:Name="applyFiltersCheckbox" IsChecked="{Binding ApplyFilters, Mode=TwoWay}"/>
+                <CheckBox x:Name="applyFiltersCheckbox" Margin="10"
+                          HorizontalAlignment="Center" IsChecked="{Binding ApplyFilters, Mode=TwoWay}"/>
             </StackPanel>
-            <Button x:Name="randomButton" Content="Random album" Click="randomButton_Click"/>
-            <Button x:Name="editButton" Content="Edit the collection" Click="editButton_Click"/>
-        </StackPanel>
+            <Button Grid.Column="5" x:Name="randomButton" Content="Random album" Click="randomButton_Click"/>
+            <Button Grid.Column="6" x:Name="editButton" Content="Edit the collection" Click="editButton_Click"/>
+        </Grid>
         <local:ListOfAlbumsControl x:Name="listOfAlbums" Grid.Row="1"/>
     </Grid>
 </Window>

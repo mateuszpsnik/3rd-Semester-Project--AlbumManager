@@ -9,21 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\mateu\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\Album Manager.csproj",
+      "projectUniqueName": "C:\\Users\\mateu\\Source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\Album Manager.csproj",
       "projectName": "Album Manager",
-      "projectPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\Album Manager.csproj",
+      "projectPath": "C:\\Users\\mateu\\Source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\Album Manager.csproj",
       "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateu\\source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\obj\\",
+      "outputPath": "C:\\Users\\mateu\\Source\\repos\\PJP project\\pjp--project--albummanager\\WPF\\Album Manager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,6 +58,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -68,7 +84,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

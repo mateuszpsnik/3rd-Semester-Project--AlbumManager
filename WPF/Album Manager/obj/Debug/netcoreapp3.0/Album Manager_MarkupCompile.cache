@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager\obj\Debug\netcoreapp3.0\
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\obj\Debug\netcoreapp3.0\
 Album_Manager
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
-C:\Users\mateu\source\repos\PJP project\pjp--project--albummanager\Album Manager\App.xaml
+C:\Users\mateu\Source\repos\PJP project\pjp--project--albummanager\WPF\Album Manager\App.xaml
 4-1626700169
 
 101309815893
-192-1037106189
+192-141484656
 View\EditCollectionWindow.xaml;View\ListOfAlbumsControl.xaml;View\RandomAlbumWindow.xaml;View\StartWindow.xaml;
 
 False
