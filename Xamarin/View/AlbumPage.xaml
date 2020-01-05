@@ -7,15 +7,6 @@
              x:Class="AlbumManagerMobile.View.AlbumPage"
              xmlns:viewmodel="clr-namespace:AlbumManagerMobile.ViewModel">
 
-
-    <ContentPage.BindingContext>
-        <viewmodel:AlbumViewModel/>
-    </ContentPage.BindingContext>
-
-    <ContentPage.Resources>
-        <viewmodel:ImageSourceConverter x:Key="imageSourceConverter"/>
-    </ContentPage.Resources>
-
     <ContentPage.Content>
         <StackLayout>
             <Image x:Name="Cover" WidthRequest="250" HeightRequest="250" Margin="50"/>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AlbumManagerMobile.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AlbumManagerMobile.ViewModel;
 
 namespace AlbumManagerMobile.View
 {
@@ -39,9 +40,18 @@ namespace AlbumManagerMobile.View
             }
         }
 
-        private void startButton_Clicked(object sender, EventArgs e)
+        private async void startButton_Clicked(object sender, EventArgs e)
         {
-
+            AlbumViewModel albumViewModel = new AlbumViewModel();
+            albumViewModel.ApplyFilters = true;
+            albumViewModel.SelectedDayOrNight = dayNightPicker.SelectedIndex;
+            albumViewModel.SelectedGenre = genresPicker.SelectedIndex;
+            albumViewModel.SelectedMood = moodPicker.SelectedIndex;
+            bool success = albumViewModel.ChooseRandomAlbum();
+            if (success)
+                await Navigation.PushModalAsync(new AlbumPage(albumViewModel, true));
+            else
+                await DisplayAlert("No items", "The are no matching items", "OK");
         }
 
         private async void backHomeButton_Clicked(object sender, EventArgs e)

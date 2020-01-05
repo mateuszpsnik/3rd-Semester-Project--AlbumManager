@@ -7,6 +7,7 @@ using AlbumManagerMobile.Model;
 using Xamarin.Forms;
 using System.Runtime.Serialization;
 using System.IO;
+using AlbumManagerMobile.View;
 
 namespace AlbumManagerMobile.ViewModel
 {
@@ -27,8 +28,6 @@ namespace AlbumManagerMobile.ViewModel
         private static int selectedGenre;
         private static int selectedDayOrNight;
         private static int selectedMood;
-        private static int yearFrom = 1970;
-        private static int yearTo = DateTime.Now.Year;
 
         private bool applyFilters;
         public bool ApplyFilters
@@ -88,26 +87,7 @@ namespace AlbumManagerMobile.ViewModel
                 Collection = fullCollection;
             }
         }
-        public int YearFrom
-        {
-            get => yearFrom;
-            set
-            {
-                yearFrom = value;
-                OnPropertyChanged(nameof(YearFrom));
-                Collection = fullCollection;
-            }
-        }
-        public int YearTo
-        {
-            get => yearTo;
-            set
-            {
-                yearTo = value;
-                OnPropertyChanged(nameof(YearTo));
-                Collection = fullCollection;
-            }
-        }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -122,8 +102,6 @@ namespace AlbumManagerMobile.ViewModel
                                              where item.Genres.Contains((Genre)selectedGenre)
                                              where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
                                              where item.Mood.Contains((Mood)selectedMood)
-                                             where item.Year >= yearFrom
-                                             where item.Year <= yearTo
                                              select item;
 
                     viewCollection = new ObservableCollection<Album>(collectionToReturn);
@@ -144,26 +122,31 @@ namespace AlbumManagerMobile.ViewModel
 
         public bool ChooseRandomAlbum()
         {
-            if (applyFilters)
+            try
             {
-                var filtered = from item in viewCollection
-                               where item.Genres.Contains((Genre)selectedGenre)
-                               where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
-                               where item.Mood.Contains((Mood)selectedMood)
-                               where item.Year >= yearFrom
-                               where item.Year <= yearTo
-                               select item;
-                List<Album> filteredCollection = new List<Album>(filtered);
-                currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
-                return true;
+                if (applyFilters)
+                {
+                    var filtered = from item in viewCollection
+                                   where item.Genres.Contains((Genre)selectedGenre)
+                                   where item.DayOrNight.Contains((DayOrNight)selectedDayOrNight)
+                                   where item.Mood.Contains((Mood)selectedMood)
+                                   select item;
+                    List<Album> filteredCollection = new List<Album>(filtered);
+                    currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
+                    return true;
+                }
+                else
+                {
+                    var filtered = from item in viewCollection
+                                   select item;
+                    List<Album> filteredCollection = new List<Album>(filtered);
+                    currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
+                    return true;
+                }
             }
-            else
+            catch
             {
-                var filtered = from item in viewCollection
-                               select item;
-                List<Album> filteredCollection = new List<Album>(filtered);
-                currentAlbum = filteredCollection[random.Next(filteredCollection.Count)];
-                return true;
+                return false;
             }
         }
 

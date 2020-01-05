@@ -9,7 +9,7 @@ namespace AlbumManagerMobile.Model
     public class Album
     {
         [DataMember]
-        public string Title { get; private set; }
+        public string Title { get; set; }
         [DataMember]
         public string Artist { get; private set; }
         [DataMember]

@@ -15,16 +15,15 @@ namespace AlbumManagerMobile.View
         public StartPage()
         {
             InitializeComponent();
-
         }
         private async void StartButton_Clicked(object sender, EventArgs e)
         {
             AlbumViewModel albumViewModel = new AlbumViewModel();
-            //albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
+            albumViewModel.ApplyFilters = false;
             bool success = albumViewModel.ChooseRandomAlbum();
             if (success)
             {
-                AlbumPage albumPage = new AlbumPage(albumViewModel);
+                AlbumPage albumPage = new AlbumPage(albumViewModel, false);
                 await Navigation.PushModalAsync(albumPage);
             }
         }
