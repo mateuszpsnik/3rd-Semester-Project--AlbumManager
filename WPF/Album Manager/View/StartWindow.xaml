@@ -17,27 +17,30 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Margin="0,5,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Genres" HorizontalAlignment="Center"/>
-                <ComboBox x:Name="genresComboBox" Width="200" SelectedIndex="{Binding SelectedGenre, Mode=TwoWay}"/>
+                <ComboBox x:Name="genresComboBox" Width="200" Margin="0,5,0,0"
+                          SelectedIndex="{Binding SelectedGenre, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Day/Night" HorizontalAlignment="Center"/>
-                <ComboBox x:Name="dayNightComboBox" Width="200" SelectedIndex="{Binding SelectedDayOrNight, Mode=TwoWay}"/>
+                <ComboBox x:Name="dayNightComboBox" Width="200" Margin="0,5,0,0"
+                          SelectedIndex="{Binding SelectedDayOrNight, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="2">
                 <TextBlock Text="Mood" HorizontalAlignment="Center"/>
-                <ComboBox x:Name="moodComboBox" Width="200" SelectedIndex="{Binding SelectedMood, Mode=TwoWay}"/>
+                <ComboBox x:Name="moodComboBox" Width="200" Margin="0,5,0,0"
+                          SelectedIndex="{Binding SelectedMood, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <TextBlock Text="Year" HorizontalAlignment="Center"/>
@@ -47,16 +50,24 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="2" Text="To:"/>
-                    <TextBox Width="50" Margin="2" Text="{Binding YearTo, Mode=TwoWay}"/>
+                    <TextBox Width="50" Margin="17,2,2,2" Text="{Binding YearTo, Mode=TwoWay}"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Apply filters" HorizontalAlignment="Center"/>
                 <CheckBox x:Name="applyFiltersCheckbox" Margin="10"
-                          HorizontalAlignment="Center" IsChecked="{Binding ApplyFilters, Mode=TwoWay}"/>
+                          HorizontalAlignment="Center" IsChecked="{Binding ApplyFilters, Mode=TwoWay}">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
             </StackPanel>
-            <Button Grid.Column="5" x:Name="randomButton" Content="Random album" Click="randomButton_Click"/>
-            <Button Grid.Column="6" x:Name="editButton" Content="Edit the collection" Click="editButton_Click"/>
+            <Button Grid.Column="5" x:Name="randomButton" Click="randomButton_Click">
+                <TextBlock Text="Random album" TextWrapping="Wrap"/>
+            </Button>
+            <Button Grid.Column="6" x:Name="editButton" Click="editButton_Click">
+                <TextBlock Text="Edit the collection" TextWrapping="Wrap"/>
+            </Button>
         </Grid>
         <local:ListOfAlbumsControl x:Name="listOfAlbums" Grid.Row="1"/>
     </Grid>

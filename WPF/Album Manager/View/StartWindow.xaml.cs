@@ -50,11 +50,12 @@ namespace Album_Manager.View
         private void randomButton_Click(object sender, RoutedEventArgs e)
         {
             AlbumViewModel albumViewModel = new AlbumViewModel();
-            albumViewModel.ApplyFilters = (bool)applyFiltersCheckbox.IsChecked;
+            bool filters = (bool)applyFiltersCheckbox.IsChecked;
+            albumViewModel.ApplyFilters = filters;
             bool success = albumViewModel.ChooseRandomAlbum();
             if (success)
             {
-                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(albumViewModel);
+                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(albumViewModel, filters);
                 randomAlbumWindow.Show();
             }
         }

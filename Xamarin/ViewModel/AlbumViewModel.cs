@@ -144,7 +144,7 @@ namespace AlbumManagerMobile.ViewModel
                     return true;
                 }
             }
-            catch
+            catch (ArgumentOutOfRangeException)
             {
                 return false;
             }

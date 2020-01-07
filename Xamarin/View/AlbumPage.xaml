@@ -8,15 +8,28 @@
              xmlns:viewmodel="clr-namespace:AlbumManagerMobile.ViewModel">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Image x:Name="Cover" WidthRequest="250" HeightRequest="250" Margin="50"/>
-            <StackLayout Margin="20, 20">
-                <Label x:Name="TitleBlock" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                <Label x:Name="ArtistBlock" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                <Label x:Name="YearBlock" FontSize="20" HorizontalTextAlignment="Center"/>
+        <Grid BackgroundColor="Black" Padding="0,10,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="GhostWhite" Margin="0,0,0,40">
+                <Image x:Name="Cover" WidthRequest="250" HeightRequest="250" Margin="40,40,40,20"/>
+                <StackLayout Margin="20,0,20,20">
+                    <Label x:Name="TitleBlock" FontSize="40" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="ArtistBlock" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="YearBlock" FontSize="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>
             </StackLayout>
-            <Button Text="Open on Spotify" x:Name="SpotifyButton" Clicked="SpotifyButton_Clicked"/>
-            <Button Text="New random album" x:Name="NewRandomButton" Clicked="NewRandomButton_Clicked"/>
-        </StackLayout>
+            <Button Grid.Row="1" BackgroundColor="GhostWhite" Text="Open on Spotify" 
+                    x:Name="SpotifyButton" Clicked="SpotifyButton_Clicked"/>
+            <Button Grid.Row="2" BackgroundColor="GhostWhite" Text="New random album"
+                    x:Name="NewRandomButton" Clicked="NewRandomButton_Clicked"/>
+            <Button Grid.Row="3" BackgroundColor="GhostWhite" Text="Back home"
+                    x:Name="backHomeButton" Clicked="backHomeButton_Clicked"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -80,30 +80,38 @@ namespace Album_Manager.View
 
         private void openButton_Click(object sender, RoutedEventArgs e)
         {
-            Album albumDeserialized;
+            try
+            {
+                Album albumDeserialized;
 
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Album Manager";
-            dialog.ShowDialog();
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Album Manager";
+                dialog.ShowDialog();
 
-            string path = dialog.FileName;
+                string path = dialog.FileName;
 
-            var dataSerializer = new DataContractSerializer(typeof(Album));
+                var dataSerializer = new DataContractSerializer(typeof(Album));
 
-            using (Stream stream = File.OpenRead(path))
-                albumDeserialized = dataSerializer.ReadObject(stream) as Album;
+                using (Stream stream = File.OpenRead(path))
+                    albumDeserialized = dataSerializer.ReadObject(stream) as Album;
 
-            titleBox.Text = albumDeserialized.Title;
-            artistBox.Text = albumDeserialized.Artist;
-            yearBox.Text = albumDeserialized.Year.ToString();
-            coverBox.Text = albumDeserialized.ImageUrl;
-            foreach (var item in albumDeserialized.Genres)
-                genres.Items.Add(item);
-            foreach (var item in albumDeserialized.DayOrNight)
-                dayNightList.Items.Add(item);
-            foreach (var item in albumDeserialized.Mood)
-                moods.Items.Add(item);
-            spotifyBox.Text = albumDeserialized.AlbumUri.ToString();            
+                titleBox.Text = albumDeserialized.Title;
+                artistBox.Text = albumDeserialized.Artist;
+                yearBox.Text = albumDeserialized.Year.ToString();
+                coverBox.Text = albumDeserialized.ImageUrl;
+                foreach (var item in albumDeserialized.Genres)
+                    genres.Items.Add(item);
+                foreach (var item in albumDeserialized.DayOrNight)
+                    dayNightList.Items.Add(item);
+                foreach (var item in albumDeserialized.Mood)
+                    moods.Items.Add(item);
+                spotifyBox.Text = albumDeserialized.AlbumUri.ToString();
+            }
+            catch (SerializationException)
+            {
+                MessageBox.Show("File should be of .xml type", "Wrong file type", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)

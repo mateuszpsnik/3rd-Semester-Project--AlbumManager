@@ -29,8 +29,9 @@ namespace Album_Manager.View
         {
             AlbumViewModel viewModel = new AlbumViewModel();
             viewModel.CurrentAlbum = listView.SelectedItem as Album;
+            bool filters = viewModel.ApplyFilters;
 
-            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(viewModel);
+            RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(viewModel, filters);
             randomAlbumWindow.Show();
         }
     }

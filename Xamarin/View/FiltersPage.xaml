@@ -6,15 +6,28 @@
              mc:Ignorable="d"
              x:Class="AlbumManagerMobile.View.FiltersPage">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand">
-            <Label Text="Choose a genre" HorizontalOptions="CenterAndExpand"/>
-            <Picker x:Name="genresPicker" Title="Genre"/>
-            <Label Text="Are you listening during a day or a night?" HorizontalOptions="CenterAndExpand"/>
-            <Picker x:Name="dayNightPicker" Title="Day or night"/>
-            <Label Text="Choose a mood/valence" HorizontalOptions="CenterAndExpand"/>
-            <Picker x:Name="moodPicker" Title="Mood"/>
-            <Button Text="Select a random album" x:Name="startButton" Clicked="startButton_Clicked"/>
-            <Button Text="Go back home" x:Name="backHomeButton" Clicked="backHomeButton_Clicked"/>
-        </StackLayout>
+        <Grid Padding="0,20,0,20" BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label TextColor="GhostWhite" Text="Choose a genre" HorizontalOptions="CenterAndExpand"/>
+                <Picker TextColor="GhostWhite" TitleColor="Red" x:Name="genresPicker" Title="Genre"/>
+                <Label TextColor="GhostWhite" Text="Are you listening during a day or a night?"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Picker TextColor="GhostWhite" TitleColor="Red" x:Name="dayNightPicker"
+                        Title="Day or night"/>
+                <Label TextColor="GhostWhite" Text="Choose a mood/valence" 
+                       HorizontalOptions="CenterAndExpand"/>
+                <Picker TextColor="GhostWhite" TitleColor="Red" x:Name="moodPicker" Title="Mood"/>
+            </StackLayout>
+            <Button Text="Select a random album" x:Name="startButton" Clicked="startButton_Clicked"
+                    Grid.Row="1" BackgroundColor="GhostWhite"/>
+            <Button Text="Go back home" x:Name="backHomeButton" Clicked="backHomeButton_Clicked"
+                    Grid.Row="2" BackgroundColor="GhostWhite"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

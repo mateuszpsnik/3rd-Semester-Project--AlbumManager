@@ -53,5 +53,11 @@ namespace AlbumManagerMobile.View
                 await Navigation.PushModalAsync(albumPage);
             }
         }
+
+        private async void backHomeButton_Clicked(object sender, EventArgs e)
+        {
+            StartPage startPage = new StartPage();
+            await Navigation.PushModalAsync(startPage);
+        }
     }
 }

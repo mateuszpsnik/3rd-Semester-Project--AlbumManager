@@ -8,9 +8,16 @@
              x:Class="AlbumManagerMobile.View.StartPage">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Start without filters" x:Name="StartButton" Clicked="StartButton_Clicked"/>
-            <Button Text="Filters" x:Name="FiltersButton" Clicked="FiltersButton_Clicked"/>
-        </StackLayout>
+        <Grid Padding="20" BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <Button Text="Start without filters" x:Name="StartButton" Clicked="StartButton_Clicked"
+                    BackgroundColor="GhostWhite"/>
+            <Button Grid.Row="1" Text="Filters" x:Name="FiltersButton" Clicked="FiltersButton_Clicked"
+                    BackgroundColor="GhostWhite"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

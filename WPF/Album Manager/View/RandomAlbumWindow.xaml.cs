@@ -20,7 +20,8 @@ namespace Album_Manager.View
     /// </summary>
     public partial class RandomAlbumWindow : Window
     {
-        public RandomAlbumWindow(AlbumViewModel viewModel)
+        bool filters;
+        public RandomAlbumWindow(AlbumViewModel viewModel, bool filters)
         {
             InitializeComponent();
 
@@ -30,13 +31,22 @@ namespace Album_Manager.View
             YearBlock.Text = viewModel.CurrentAlbumYear.ToString();
 
             this.Title = viewModel.CurrentAlbumTitle;
+            this.filters = filters;
 
             webBrowser.Navigate(viewModel.CurrentAlbumUri);
         }
 
         private void anotherAlbumButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            AlbumViewModel albumViewModel = new AlbumViewModel();
+            albumViewModel.ApplyFilters = filters;
+            bool success = albumViewModel.ChooseRandomAlbum();
+            if (success)
+            {
+                RandomAlbumWindow randomAlbumWindow = new RandomAlbumWindow(albumViewModel, filters);
+                randomAlbumWindow.Show();
+                this.Close();
+            }
         }
     }
 }
